@@ -63,7 +63,6 @@ import org.slf4j.LoggerFactory;
  * advised to rather create a new sub class of {@link FXDialog}.
  */
 public class JabRefDialogService implements DialogService {
-
     // Snackbar dialog maximum size
     public static final int DIALOG_SIZE_LIMIT = 300;
 
@@ -98,7 +97,6 @@ public class JabRefDialogService implements DialogService {
         // Create a new dialog pane that has a checkbox instead of the hide/show details button
         // Use the supplied callback for the action of the checkbox
         alert.setDialogPane(new DialogPane() {
-
             @Override
             protected Node createDetailsButton() {
                 CheckBox optOut = new CheckBox();
@@ -345,7 +343,8 @@ public class JabRefDialogService implements DialogService {
                          .threshold(5,
                                  Notifications.create()
                                               .title("Last notification")
-                                              .text( "(" + Localization.lang("Check the event log to see all notifications") + ")"
+                                              .text(
+                                                    "(" + Localization.lang("Check the event log to see all notifications") + ")"
                                                      + "\n\n" + message))
                          .hideCloseButton()
                          .show();
